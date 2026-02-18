@@ -6,12 +6,13 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Poppins',sans-serif;background:#f4f7fc;color:#333;}
 
-.container{width:90%;max-width:1100px;margin:auto;}
+.container{width:90%;max-width:1200px;margin:auto;}
 
 header{
 background:linear-gradient(135deg,#1d3557,#457b9d);
@@ -35,7 +36,7 @@ gap:30px;
 
 .course-card{
 background:white;
-width:260px;
+width:320px;
 padding:25px;
 border-radius:20px;
 box-shadow:0 15px 30px rgba(0,0,0,0.08);
@@ -46,15 +47,24 @@ transition:0.3s;
 
 .course-card img{width:60px;margin-bottom:15px;}
 
-.price{font-size:22px;font-weight:600;margin:10px 0;}
+.option{
+margin:8px 0;
+padding:8px;
+border-radius:8px;
+background:#eef3f8;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
 button{
 background:#28a745;
 color:white;
-padding:10px 20px;
+padding:8px 15px;
 border:none;
-border-radius:25px;
+border-radius:20px;
 cursor:pointer;
+font-size:13px;
 }
 
 .cart-box{
@@ -62,27 +72,37 @@ background:white;
 padding:30px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-max-width:400px;
+max-width:450px;
 margin:auto;
 }
 
 input, textarea{
-width:260px;
+width:280px;
 padding:10px;
 margin:8px;
 border-radius:6px;
 border:1px solid #ccc;
 }
 
-.comment-box{
-max-width:600px;
-margin:auto;
-text-align:left;
+.testimonial-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.testimonial{
+background:white;
+padding:20px;
+width:280px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+font-style:italic;
 }
 
 .comment{
 background:white;
-padding:15px;
+padding:12px;
 margin-bottom:10px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.05);
@@ -93,6 +113,25 @@ background:#1d3557;
 color:white;
 text-align:center;
 padding:20px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+text-decoration:none;
+z-index:999;
 }
 </style>
 </head>
@@ -111,39 +150,105 @@ padding:20px;
 
 <div class="course-grid">
 
+<!-- Excel -->
 <div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png">
-<h3>Excel Course</h3>
-<div class="price">₹500</div>
-<button onclick="addToCart('Excel',500)">Add to Cart</button>
+<h3>Excel</h3>
+
+<div class="option">
+<span>PDF - ₹300</span>
+<button onclick="addToCart('Excel PDF',300)">Add</button>
 </div>
 
+<div class="option">
+<span>Video - ₹600</span>
+<button onclick="addToCart('Excel Video',600)">Add</button>
+</div>
+
+<div class="option">
+<span>Combo - ₹800</span>
+<button onclick="addToCart('Excel Combo',800)">Add</button>
+</div>
+</div>
+
+<!-- Python -->
 <div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png">
-<h3>Python Course</h3>
-<div class="price">₹800</div>
-<button onclick="addToCart('Python',800)">Add to Cart</button>
+<h3>Python</h3>
+
+<div class="option">
+<span>PDF - ₹400</span>
+<button onclick="addToCart('Python PDF',400)">Add</button>
 </div>
 
+<div class="option">
+<span>Video - ₹900</span>
+<button onclick="addToCart('Python Video',900)">Add</button>
+</div>
+
+<div class="option">
+<span>Combo - ₹1200</span>
+<button onclick="addToCart('Python Combo',1200)">Add</button>
+</div>
+</div>
+
+<!-- Power BI -->
 <div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
-<h3>Power BI Course</h3>
-<div class="price">₹700</div>
-<button onclick="addToCart('Power BI',700)">Add to Cart</button>
+<h3>Power BI</h3>
+
+<div class="option">
+<span>PDF - ₹350</span>
+<button onclick="addToCart('Power BI PDF',350)">Add</button>
 </div>
 
+<div class="option">
+<span>Video - ₹750</span>
+<button onclick="addToCart('Power BI Video',750)">Add</button>
+</div>
+
+<div class="option">
+<span>Combo - ₹950</span>
+<button onclick="addToCart('Power BI Combo',950)">Add</button>
+</div>
+</div>
+
+<!-- Tableau -->
 <div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
-<h3>Tableau Course</h3>
-<div class="price">₹750</div>
-<button onclick="addToCart('Tableau',750)">Add to Cart</button>
+<h3>Tableau</h3>
+
+<div class="option">
+<span>PDF - ₹350</span>
+<button onclick="addToCart('Tableau PDF',350)">Add</button>
+</div>
+
+<div class="option">
+<span>Video - ₹700</span>
+<button onclick="addToCart('Tableau Video',700)">Add</button>
+</div>
+
+<div class="option">
+<span>Combo - ₹900</span>
+<button onclick="addToCart('Tableau Combo',900)">Add</button>
+</div>
 </div>
 
 </div>
 </div>
 </div>
 
-<!-- Cart Section -->
+<!-- Testimonials -->
+<div class="section">
+<h2>What Students Say</h2>
+<div class="testimonial-grid">
+<div class="testimonial">"Excel course helped me in my job." – Rahul</div>
+<div class="testimonial">"Power BI training was practical." – Sneha</div>
+<div class="testimonial">"Python combo course is amazing!" – Amit</div>
+</div>
+</div>
+
+<!-- Cart -->
 <div class="section">
 <h2>Your Details & Cart</h2>
 
@@ -159,21 +264,22 @@ padding:20px;
 </div>
 </div>
 
-<!-- Comment Section -->
+<!-- Feedback -->
 <div class="section">
 <h2>Student Feedback</h2>
-
-<div class="comment-box">
 <textarea id="commentInput" rows="3" placeholder="Write your feedback"></textarea><br>
 <button onclick="addComment()">Submit</button>
-
 <div id="comments"></div>
-</div>
 </div>
 
 <footer>
 © 2026 Professional Skills Academy
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/7507940073" class="whatsapp-float" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 let cart=[];
@@ -223,31 +329,17 @@ var rzp=new Razorpay(options);
 rzp.open();
 }
 
-// Comment System (Local Storage Version)
+// Comments
 function addComment(){
 let text=document.getElementById("commentInput").value;
 if(text=="") return;
 
-let comments=JSON.parse(localStorage.getItem("comments"))||[];
-comments.push(text);
-localStorage.setItem("comments",JSON.stringify(comments));
-displayComments();
-document.getElementById("commentInput").value="";
-}
-
-function displayComments(){
-let comments=JSON.parse(localStorage.getItem("comments"))||[];
-let container=document.getElementById("comments");
-container.innerHTML="";
-comments.forEach(c=>{
 let div=document.createElement("div");
 div.className="comment";
-div.innerText=c;
-container.appendChild(div);
-});
+div.innerText=text;
+document.getElementById("comments").appendChild(div);
+document.getElementById("commentInput").value="";
 }
-
-displayComments();
 </script>
 
 </body>
