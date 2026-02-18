@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Excel Mastery Course | Learn Excel Like a Pro</title>
+<title>Professional Skills Academy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
@@ -9,177 +9,90 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f4f7fc;color:#333;}
 
-body{
-font-family:'Poppins',sans-serif;
-background:#f4f7fc;
-color:#333;
-}
-
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
+.container{width:90%;max-width:1100px;margin:auto;}
 
 header{
 background:linear-gradient(135deg,#1d3557,#457b9d);
 color:white;
 text-align:center;
-padding:100px 20px;
+padding:80px 20px;
 }
 
-header h1{
-font-size:48px;
-margin-bottom:15px;
-}
+header h1{font-size:42px;margin-bottom:10px;}
 
-header p{
-font-size:18px;
-margin-bottom:25px;
-}
+.section{padding:70px 0;text-align:center;}
 
-.cta-btn{
-background:#ffc107;
-padding:15px 35px;
-border:none;
-border-radius:40px;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
+.section h2{margin-bottom:40px;font-size:32px;}
 
-.cta-btn:hover{
-transform:scale(1.08);
-}
-
-.section{
-padding:80px 0;
-text-align:center;
-}
-
-.section h2{
-margin-bottom:40px;
-font-size:34px;
-}
-
-.features{
+.course-grid{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:30px;
 }
 
-.card{
+.course-card{
 background:white;
-width:280px;
-padding:30px;
+width:260px;
+padding:25px;
 border-radius:20px;
 box-shadow:0 15px 30px rgba(0,0,0,0.08);
-transition:0.4s;
+transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-}
+.course-card:hover{transform:translateY(-8px);}
 
-.card img{
-width:70px;
-margin-bottom:15px;
-}
+.course-card img{width:60px;margin-bottom:15px;}
 
-.price-section{
-background:#ffffff;
-padding:80px 0;
-}
+.price{font-size:22px;font-weight:600;margin:10px 0;}
 
-.price-box{
-background:white;
-width:320px;
-padding:40px;
-border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,0.1);
-transition:0.4s;
-}
-
-.price-box:hover{
-transform:scale(1.05);
-}
-
-.price{
-font-size:42px;
-color:#1d3557;
-margin:15px 0;
-font-weight:700;
-}
-
-.buy-btn{
+button{
 background:#28a745;
 color:white;
-padding:14px 30px;
+padding:10px 20px;
 border:none;
-border-radius:30px;
+border-radius:25px;
 cursor:pointer;
-font-size:16px;
 }
 
-input{
+.cart-box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+max-width:400px;
+margin:auto;
+}
+
+input, textarea{
 width:260px;
-padding:12px;
-margin:10px;
-border-radius:8px;
+padding:10px;
+margin:8px;
+border-radius:6px;
 border:1px solid #ccc;
 }
 
-.testimonial{
-background:white;
-padding:25px;
-width:300px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-font-style:italic;
-}
-
-.faq-item{
-background:white;
-padding:20px;
-margin-bottom:15px;
-border-radius:10px;
-cursor:pointer;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+.comment-box{
+max-width:600px;
+margin:auto;
 text-align:left;
 }
 
-.faq-answer{
-display:none;
-margin-top:10px;
-font-size:14px;
+.comment{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 footer{
 background:#1d3557;
 color:white;
 text-align:center;
-padding:30px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-@media(max-width:768px){
-header h1{font-size:30px;}
-.features{flex-direction:column;align-items:center;}
+padding:20px;
 }
 </style>
 </head>
@@ -187,136 +100,154 @@ header h1{font-size:30px;}
 <body>
 
 <header>
-<div class="container">
-<h1>Become Excel Expert in 7 Days</h1>
-<p>Master Excel Formulas, Pivot Tables & Dashboards</p>
-<button class="cta-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
-Enroll Now
-</button>
-</div>
+<h1>Professional Skills Academy</h1>
+<p>Excel | Python | Power BI | Tableau</p>
 </header>
 
-<!-- Features -->
+<!-- Courses -->
 <div class="section">
 <div class="container">
-<h2>What You Will Learn</h2>
+<h2>Select Courses</h2>
 
-<div class="features">
-<div class="card">
+<div class="course-grid">
+
+<div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png">
-<p>Excel Formulas & Functions</p>
+<h3>Excel Course</h3>
+<div class="price">₹500</div>
+<button onclick="addToCart('Excel',500)">Add to Cart</button>
 </div>
 
-<div class="card">
+<div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png">
-<p>Pivot Tables & Reports</p>
+<h3>Python Course</h3>
+<div class="price">₹800</div>
+<button onclick="addToCart('Python',800)">Add to Cart</button>
 </div>
 
-<div class="card">
+<div class="course-card">
 <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
-<p>Interactive Dashboards</p>
+<h3>Power BI Course</h3>
+<div class="price">₹700</div>
+<button onclick="addToCart('Power BI',700)">Add to Cart</button>
 </div>
+
+<div class="course-card">
+<img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+<h3>Tableau Course</h3>
+<div class="price">₹750</div>
+<button onclick="addToCart('Tableau',750)">Add to Cart</button>
+</div>
+
 </div>
 </div>
 </div>
 
-<!-- Testimonials -->
-<div class="section" style="background:#eef3f8;">
-<div class="container">
-<h2>Student Reviews</h2>
-<div class="features">
-<div class="testimonial">
-"This course made Excel very simple!" – Rahul
-</div>
-<div class="testimonial">
-"Best practical Excel training." – Sneha
-</div>
-</div>
-</div>
-</div>
-
-<!-- Pricing -->
-<div class="price-section" id="pricing">
-<div class="container">
-<h2>Choose Your Course</h2>
+<!-- Cart Section -->
+<div class="section">
+<h2>Your Details & Cart</h2>
 
 <input type="text" id="name" placeholder="Enter Name"><br>
 <input type="email" id="email" placeholder="Enter Email"><br>
+<input type="text" id="designation" placeholder="Enter Designation"><br><br>
 
-<div class="features">
-
-<div class="price-box">
-<h3>PDF Course</h3>
-<div class="price">₹1</div>
-<button class="buy-btn" onclick="payNow(100)">Buy Now</button>
-</div>
-
-<div class="price-box">
-<h3>Video Course</h3>
-<div class="price">₹10</div>
-<button class="buy-btn" onclick="payNow(1000)">Buy Now</button>
-</div>
-
-</div>
+<div class="cart-box">
+<h3>Selected Courses</h3>
+<ul id="cartList"></ul>
+<h3>Total: ₹<span id="total">0</span></h3>
+<button onclick="payNow()">Proceed to Payment</button>
 </div>
 </div>
 
-<!-- FAQ -->
+<!-- Comment Section -->
 <div class="section">
-<div class="container">
-<h2>Frequently Asked Questions</h2>
+<h2>Student Feedback</h2>
 
-<div class="faq-item" onclick="toggleFAQ(this)">
-How will I receive the course?
-<div class="faq-answer">After payment, secure download link will be provided instantly.</div>
-</div>
+<div class="comment-box">
+<textarea id="commentInput" rows="3" placeholder="Write your feedback"></textarea><br>
+<button onclick="addComment()">Submit</button>
 
-<div class="faq-item" onclick="toggleFAQ(this)">
-Is this beginner friendly?
-<div class="faq-answer">Yes, course starts from complete basics.</div>
-</div>
-
-<div class="faq-item" onclick="toggleFAQ(this)">
-Is there lifetime access?
-<div class="faq-answer">Yes, once downloaded it's yours forever.</div>
-</div>
-
+<div id="comments"></div>
 </div>
 </div>
 
 <footer>
-© 2026 Excel Mastery Course | pavanw55@gmail.com
+© 2026 Professional Skills Academy
 </footer>
 
-<a class="whatsapp" href="https://wa.me/7507940073" target="_blank">💬</a>
-
 <script>
-function payNow(amount){
-var name=document.getElementById("name").value;
-var email=document.getElementById("email").value;
+let cart=[];
+let total=0;
 
-if(name==""||email==""){
-alert("Please enter details");
+function addToCart(course,price){
+cart.push({course,price});
+total+=price;
+updateCart();
+}
+
+function updateCart(){
+let list=document.getElementById("cartList");
+list.innerHTML="";
+cart.forEach(item=>{
+let li=document.createElement("li");
+li.innerText=item.course+" - ₹"+item.price;
+list.appendChild(li);
+});
+document.getElementById("total").innerText=total;
+}
+
+function payNow(){
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let designation=document.getElementById("designation").value;
+
+if(name==""||email==""||designation==""||cart.length==0){
+alert("Fill all details & select course");
 return;
 }
 
 var options={
 "key":"YOUR_RAZORPAY_KEY",
-"amount":amount,
+"amount":total*100,
 "currency":"INR",
-"name":"Excel Mastery Course",
+"name":"Professional Skills Academy",
+"description":"Course Purchase",
 "handler":function(response){
+alert("Payment Successful!");
 window.location.href="success.html";
-}
+},
+"prefill":{"name":name,"email":email}
 };
+
 var rzp=new Razorpay(options);
 rzp.open();
 }
 
-function toggleFAQ(element){
-var answer=element.querySelector(".faq-answer");
-answer.style.display = answer.style.display==="block" ? "none" : "block";
+// Comment System (Local Storage Version)
+function addComment(){
+let text=document.getElementById("commentInput").value;
+if(text=="") return;
+
+let comments=JSON.parse(localStorage.getItem("comments"))||[];
+comments.push(text);
+localStorage.setItem("comments",JSON.stringify(comments));
+displayComments();
+document.getElementById("commentInput").value="";
 }
+
+function displayComments(){
+let comments=JSON.parse(localStorage.getItem("comments"))||[];
+let container=document.getElementById("comments");
+container.innerHTML="";
+comments.forEach(c=>{
+let div=document.createElement("div");
+div.className="comment";
+div.innerText=c;
+container.appendChild(div);
+});
+}
+
+displayComments();
 </script>
 
 </body>
