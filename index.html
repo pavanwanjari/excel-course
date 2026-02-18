@@ -1,137 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Excel Mastery Course | Learn Excel Like a Pro</title>
+<title>Excel Mastery Course</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#f4f6fb;
-    color:#333;
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f4f7fc;
+overflow-x:hidden;
 }
 
 header{
-    background: linear-gradient(135deg,#0d6efd,#6610f2);
-    color:white;
-    padding:70px 20px;
-    text-align:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+padding:90px 20px;
+animation:fadeIn 1.5s ease-in-out;
 }
 
 header h1{
-    font-size:42px;
-}
-
-header p{
-    font-size:18px;
+font-size:45px;
+margin-bottom:15px;
 }
 
 .cta-btn{
-    background:#ffc107;
-    padding:14px 30px;
-    border:none;
-    border-radius:30px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
+background:#ffc107;
+padding:15px 35px;
+border:none;
+border-radius:30px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.cta-btn:hover{
+transform:scale(1.05);
 }
 
 .section{
-    padding:60px 20px;
-    text-align:center;
+padding:70px 20px;
+text-align:center;
 }
 
-.section h2{
-    font-size:32px;
-    margin-bottom:30px;
-}
-
-.features, .pricing, .testimonials{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
+.features{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    width:270px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+background:white;
+width:280px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .price-box{
-    background:white;
-    padding:35px;
-    width:300px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+background:white;
+width:300px;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.price-box:hover{
+transform:scale(1.05);
 }
 
 .price{
-    font-size:36px;
-    color:#0d6efd;
+font-size:40px;
+color:#0d6efd;
 }
 
 .buy-btn{
-    background:#28a745;
-    color:white;
-    padding:12px 25px;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-    margin-top:15px;
+background:#28a745;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
 }
 
 .timer{
-    font-size:22px;
-    color:#dc3545;
-    font-weight:bold;
-}
-
-input{
-    padding:10px;
-    width:250px;
-    margin:10px;
-    border-radius:5px;
-    border:1px solid #ccc;
-}
-
-.faq{
-    text-align:left;
-    max-width:700px;
-    margin:auto;
-}
-
-.faq h4{
-    margin-bottom:5px;
-}
-
-footer{
-    background:#111;
-    color:white;
-    padding:25px;
-    text-align:center;
+font-size:22px;
+color:#ff4d4d;
+font-weight:600;
 }
 
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:20px;
-    text-decoration:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
 }
 
-@media(max-width:768px){
-    header h1{font-size:28px;}
+footer{
+background:#111;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 </style>
 </head>
@@ -139,66 +131,51 @@ footer{
 <body>
 
 <header>
-<h1>Master Excel from Beginner to Advanced</h1>
-<p>Learn Practical Excel Skills for Job & Data Analytics</p>
-<p class="timer">Offer Ends In: <span id="countdown"></span></p>
+<h1>Become Excel Expert in 7 Days</h1>
+<p>From Basics to Dashboard Mastery</p>
+<p class="timer">Limited Offer Ends In: <span id="countdown"></span></p>
 <button class="cta-btn" onclick="scrollToPricing()">Enroll Now</button>
 </header>
 
-<!-- Benefits -->
+<!-- Excel Image Section -->
 <div class="section">
-<h2>Why This Course?</h2>
+<h2>Learn Real Practical Excel Skills</h2>
+
 <div class="features">
-<div class="card">📊 Job Ready Skills</div>
-<div class="card">⚡ Save 5+ Hours Weekly</div>
-<div class="card">📈 Dashboard Mastery</div>
-</div>
-</div>
-
-<!-- What You Learn -->
-<div class="section" style="background:#eef2ff;">
-<h2>What You Will Learn</h2>
-<div class="features">
-<div class="card">Excel Basics</div>
-<div class="card">Formulas & Functions</div>
-<div class="card">VLOOKUP & XLOOKUP</div>
-<div class="card">Pivot Tables</div>
-<div class="card">Dashboard Creation</div>
-</div>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" width="80"><br><br>
+<p>Excel Formulas & Functions</p>
 </div>
 
-<!-- Certificate -->
-<div class="section">
-<h2>🎓 Certificate of Completion</h2>
-<p>Receive a professional certificate after completing the course.</p>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" width="80"><br><br>
+<p>Pivot Tables & Reports</p>
 </div>
 
-<!-- Testimonials -->
-<div class="section">
-<h2>Student Reviews</h2>
-<div class="testimonials">
-<div class="card">"Very simple and practical training!" – Rahul</div>
-<div class="card">"Best Excel course for beginners." – Sneha</div>
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" width="80"><br><br>
+<p>Professional Dashboards</p>
+</div>
 </div>
 </div>
 
 <!-- Pricing -->
-<div class="section" id="pricing" style="background:#f8f9fa;">
+<div class="section" id="pricing">
 <h2>Choose Your Course</h2>
 
-<input type="text" id="name" placeholder="Enter Your Name"><br>
-<input type="email" id="email" placeholder="Enter Your Email"><br>
+<input type="text" id="name" placeholder="Enter Name"><br><br>
+<input type="email" id="email" placeholder="Enter Email"><br><br>
 
-<div class="pricing">
+<div class="features">
 
 <div class="price-box">
-<h3>📘 PDF Course</h3>
+<h3>PDF Course</h3>
 <div class="price">₹1</div>
 <button class="buy-btn" onclick="payNow(100)">Buy Now</button>
 </div>
 
 <div class="price-box">
-<h3>🎥 Video Course</h3>
+<h3>Video Course</h3>
 <div class="price">₹10</div>
 <button class="buy-btn" onclick="payNow(1000)">Buy Now</button>
 </div>
@@ -206,27 +183,10 @@ footer{
 </div>
 </div>
 
-<!-- FAQ -->
-<div class="section">
-<h2>Frequently Asked Questions</h2>
-<div class="faq">
-<h4>How will I receive the course?</h4>
-<p>After payment, download link will be provided instantly.</p>
-
-<h4>Is this beginner friendly?</h4>
-<p>Yes, course starts from basics.</p>
-
-<h4>Is there lifetime access?</h4>
-<p>Yes, once downloaded it's yours forever.</p>
-</div>
-</div>
-
 <footer>
-<p>© 2026 Excel Mastery Course</p>
-<p>Contact: pavanw55@gmail.com</p>
+© 2026 Excel Mastery Course | pavanw55@gmail.com
 </footer>
 
-<!-- WhatsApp Button -->
 <a class="whatsapp" href="https://wa.me/7507940073" target="_blank">💬</a>
 
 <script>
@@ -235,33 +195,25 @@ document.getElementById("pricing").scrollIntoView({behavior:'smooth'});
 }
 
 function payNow(amount){
-var name = document.getElementById("name").value;
-var email = document.getElementById("email").value;
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
 
-if(name=="" || email==""){
-alert("Please enter Name and Email");
+if(name==""||email==""){
+alert("Enter details first");
 return;
 }
 
-var options = {
-"key": "YOUR_RAZORPAY_KEY",
-"amount": amount,
-"currency": "INR",
-"name": "Excel Mastery Course",
-"description": "Course Payment",
-"handler": function (response){
+var options={
+"key":"YOUR_RAZORPAY_KEY",
+"amount":amount,
+"currency":"INR",
+"name":"Excel Mastery Course",
+"handler":function(response){
 window.location.href="success.html";
-},
-"prefill": {
-"name": name,
-"email": email
-},
-"theme": {
-"color": "#0d6efd"
 }
 };
-var rzp1 = new Razorpay(options);
-rzp1.open();
+var rzp=new Razorpay(options);
+rzp.open();
 }
 
 var countDownDate = new Date().getTime() + (24*60*60*1000);
@@ -271,12 +223,8 @@ var distance = countDownDate - now;
 var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
 var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
 var seconds = Math.floor((distance % (1000*60))/1000);
-document.getElementById("countdown").innerHTML = hours + "h "
-+ minutes + "m " + seconds + "s ";
-if (distance < 0) {
-clearInterval(x);
-document.getElementById("countdown").innerHTML = "Expired";
-}
+document.getElementById("countdown").innerHTML =
+hours + "h " + minutes + "m " + seconds + "s ";
 }, 1000);
 </script>
 
