@@ -335,10 +335,15 @@ var options={
 "currency":"INR",
 "name":"Professional Skills Academy",
 "description":"Course Purchase",
-"handler":function(response){
-alert("Payment Successful!");
-window.location.href="success.html";
+"handler": function (response) {
+
+    // Save purchased courses in localStorage
+    localStorage.setItem("purchasedCourses", JSON.stringify(cart));
+
+    // Redirect to success page
+    window.location.href = "success.html";
 },
+
 "prefill":{"name":name,"email":email}
 };
 
