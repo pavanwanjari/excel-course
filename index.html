@@ -19,7 +19,7 @@ color:#333;
 
 .container{
 width:92%;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -30,10 +30,7 @@ text-align:center;
 padding:50px 15px;
 }
 
-header h1{
-font-size:26px;
-margin-bottom:8px;
-}
+header h1{font-size:26px;margin-bottom:8px;}
 
 .section{
 padding:40px 10px;
@@ -65,6 +62,11 @@ transition:0.3s;
 transform:translateY(-6px);
 }
 
+.course-card img{
+width:50px;
+margin-bottom:12px;
+}
+
 .option{
 margin:6px 0;
 padding:6px;
@@ -86,9 +88,7 @@ cursor:pointer;
 font-size:12px;
 }
 
-button:hover{
-opacity:0.9;
-}
+button:hover{opacity:0.9;}
 
 .remove-btn{
 background:#dc3545;
@@ -174,9 +174,8 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-/* Mobile Optimization */
+/* Mobile */
 @media(max-width:768px){
-
 header h1{font-size:20px;}
 .section{padding:30px 5px;}
 .course-card{width:100%;}
@@ -187,7 +186,6 @@ font-size:22px;
 bottom:15px;
 right:15px;
 }
-
 }
 </style>
 </head>
@@ -206,36 +204,40 @@ right:15px;
 
 <div class="course-grid">
 
+<!-- Excel -->
 <div class="course-card">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732220.png">
 <h3>Excel</h3>
-<div class="option">
-<span>PDF - ₹1</span>
-<button onclick="addToCart('Excel PDF',1)">Add</button>
-</div>
-<div class="option">
-<span>Video - ₹1</span>
-<button onclick="addToCart('Excel Video',1)">Add</button>
-</div>
-<div class="option">
-<span>Combo - ₹1</span>
-<button onclick="addToCart('Excel Combo',1)">Add</button>
-</div>
+<div class="option"><span>PDF - ₹1</span><button onclick="addToCart('Excel PDF',1)">Add</button></div>
+<div class="option"><span>Video - ₹1</span><button onclick="addToCart('Excel Video',1)">Add</button></div>
+<div class="option"><span>Combo - ₹1</span><button onclick="addToCart('Excel Combo',1)">Add</button></div>
 </div>
 
+<!-- Python -->
 <div class="course-card">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png">
 <h3>Python</h3>
-<div class="option">
-<span>PDF - ₹1</span>
-<button onclick="addToCart('Python PDF',1)">Add</button>
+<div class="option"><span>PDF - ₹1</span><button onclick="addToCart('Python PDF',1)">Add</button></div>
+<div class="option"><span>Video - ₹1</span><button onclick="addToCart('Python Video',1)">Add</button></div>
+<div class="option"><span>Combo - ₹1</span><button onclick="addToCart('Python Combo',1)">Add</button></div>
 </div>
-<div class="option">
-<span>Video - ₹1</span>
-<button onclick="addToCart('Python Video',1)">Add</button>
+
+<!-- Power BI -->
+<div class="course-card">
+<img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+<h3>Power BI</h3>
+<div class="option"><span>PDF - ₹1</span><button onclick="addToCart('Power BI PDF',1)">Add</button></div>
+<div class="option"><span>Video - ₹1</span><button onclick="addToCart('Power BI Video',1)">Add</button></div>
+<div class="option"><span>Combo - ₹1</span><button onclick="addToCart('Power BI Combo',1)">Add</button></div>
 </div>
-<div class="option">
-<span>Combo - ₹1</span>
-<button onclick="addToCart('Python Combo',1)">Add</button>
-</div>
+
+<!-- Tableau -->
+<div class="course-card">
+<img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
+<h3>Tableau</h3>
+<div class="option"><span>PDF - ₹1</span><button onclick="addToCart('Tableau PDF',1)">Add</button></div>
+<div class="option"><span>Video - ₹1</span><button onclick="addToCart('Tableau Video',1)">Add</button></div>
+<div class="option"><span>Combo - ₹1</span><button onclick="addToCart('Tableau Combo',1)">Add</button></div>
 </div>
 
 </div>
@@ -255,7 +257,6 @@ right:15px;
 <!-- Cart -->
 <div class="section">
 <h2>Your Details & Cart</h2>
-
 <input type="text" id="name" placeholder="Enter Name"><br>
 <input type="email" id="email" placeholder="Enter Email"><br>
 <input type="text" id="designation" placeholder="Enter Designation"><br><br>
@@ -282,9 +283,9 @@ right:15px;
 📞 9403030512 / 7507940093
 </footer>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/917507940093?text=Hi%20I%20want%20to%20know%20more%20about%20your%20courses"
-   class="whatsapp-float" target="_blank">
+<!-- WhatsApp -->
+<a href="https://wa.me/917507940093?text=Hi%20I%20want%20to%20know%20about%20your%20courses"
+class="whatsapp-float" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -307,14 +308,12 @@ updateCart();
 function updateCart(){
 let list=document.getElementById("cartList");
 list.innerHTML="";
-
 cart.forEach((item,index)=>{
 let li=document.createElement("li");
 li.innerHTML=item.course+" - ₹"+item.price+
 ` <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>`;
 list.appendChild(li);
 });
-
 document.getElementById("total").innerText=total;
 }
 
@@ -348,7 +347,6 @@ rzp.open();
 function addComment(){
 let text=document.getElementById("commentInput").value;
 if(text=="") return;
-
 let div=document.createElement("div");
 div.className="comment";
 div.innerText=text;
