@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Download Your Courses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#f4f7fc;
+text-align:center;
+padding:40px;
+}
+
+h2{margin-bottom:20px;}
+
+.download-btn{
+display:block;
+margin:15px auto;
+padding:10px 20px;
+background:#28a745;
+color:white;
+border:none;
+border-radius:8px;
+text-decoration:none;
+width:250px;
+}
+
+.download-btn:hover{
+opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🎉 Payment Successful!</h2>
+<p>Click below to download your courses:</p>
+
+<div id="downloads"></div>
+
+<script>
+
+// 🔥 Add your Google Drive links here
+const links = {
+    "Excel PDF": "https://drive.google.com/file/d/1_jgHEhCRVnjbwL8l9BIbcH--Nal-D-gn/view?usp=sharing",
+    "Excel Video": "https://drive.google.com/file/d/1_jgHEhCRVnjbwL8l9BIbcH--Nal-D-gn/view?usp=sharing",
+    "Excel Combo": "https://drive.google.com/file/d/1_jgHEhCRVnjbwL8l9BIbcH--Nal-D-gn/view?usp=sharing",
+
+    "Python PDF": "YOUR_PYTHON_PDF_LINK",
+    "Python Video": "YOUR_PYTHON_VIDEO_LINK",
+    "Python Combo": "YOUR_PYTHON_COMBO_LINK",
+
+    "Power BI PDF": "YOUR_POWERBI_PDF_LINK",
+    "Power BI Video": "YOUR_POWERBI_VIDEO_LINK",
+    "Power BI Combo": "YOUR_POWERBI_COMBO_LINK",
+
+    "Tableau PDF": "YOUR_TABLEAU_PDF_LINK",
+    "Tableau Video": "YOUR_TABLEAU_VIDEO_LINK",
+    "Tableau Combo": "YOUR_TABLEAU_COMBO_LINK"
+};
+
+// Get purchased courses
+let purchased = JSON.parse(localStorage.getItem("purchasedCourses"));
+
+let container = document.getElementById("downloads");
+
+if(purchased){
+    purchased.forEach(item => {
+        let a = document.createElement("a");
+        a.href = links[item.course];
+        a.className = "download-btn";
+        a.target = "_blank";
+        a.innerText = "Download " + item.course;
+        container.appendChild(a);
+    });
+}else{
+    container.innerHTML = "No purchase found.";
+}
+
+</script>
+
+</body>
+</html>
 
